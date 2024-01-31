@@ -11,5 +11,5 @@ public interface PostService {
 
     PostDto getRegistrationById(long id);
 
-    List<PostDto> getAllRegistration(int pageNo, int pageSize);
+    List<PostDto> getAllRegistration(int pageNo, int pageSize, String sortBy, String sortDir);
 }
