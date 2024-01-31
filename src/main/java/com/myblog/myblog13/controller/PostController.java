@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 //      http://localhost:8080/rest/api
 @RestController
 @RequestMapping("/rest/api")
@@ -26,6 +28,10 @@ public class PostController {
         PostDto byId = service.getRegistrationById(id);
         return new ResponseEntity<>(byId,HttpStatus.OK);
     }
-
-
+    //      http://localhost:8080/rest/api/getAll
+    @GetMapping("/getAll")
+    public List<PostDto> getAllRegistration(){
+        List<PostDto> allRegistration = service.getAllRegistration();
+        return allRegistration;
+    }
 }
